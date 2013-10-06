@@ -1,0 +1,380 @@
+% GNUPLOT: LaTeX picture with Postscript
+\begingroup
+  \makeatletter
+  \providecommand\color[2][]{%
+    \GenericError{(gnuplot) \space\space\space\@spaces}{%
+      Package color not loaded in conjunction with
+      terminal option `colourtext'%
+    }{See the gnuplot documentation for explanation.%
+    }{Either use 'blacktext' in gnuplot or load the package
+      color.sty in LaTeX.}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\includegraphics[2][]{%
+    \GenericError{(gnuplot) \space\space\space\@spaces}{%
+      Package graphicx or graphics not loaded%
+    }{See the gnuplot documentation for explanation.%
+    }{The gnuplot epslatex terminal needs graphicx.sty or graphics.sty.}%
+    \renewcommand\includegraphics[2][]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \@ifundefined{ifGPcolor}{%
+    \newif\ifGPcolor
+    \GPcolortrue
+  }{}%
+  \@ifundefined{ifGPblacktext}{%
+    \newif\ifGPblacktext
+    \GPblacktexttrue
+  }{}%
+  % define a \g@addto@macro without @ in the name:
+  \let\gplgaddtomacro\g@addto@macro
+  % define empty templates for all commands taking text:
+  \gdef\gplbacktext{}%
+  \gdef\gplfronttext{}%
+  \makeatother
+  \ifGPblacktext
+    % no textcolor at all
+    \def\colorrgb#1{}%
+    \def\colorgray#1{}%
+  \else
+    % gray or color?
+    \ifGPcolor
+      \def\colorrgb#1{\color[rgb]{#1}}%
+      \def\colorgray#1{\color[gray]{#1}}%
+      \expandafter\def\csname LTw\endcsname{\color{white}}%
+      \expandafter\def\csname LTb\endcsname{\color{black}}%
+      \expandafter\def\csname LTa\endcsname{\color{black}}%
+      \expandafter\def\csname LT0\endcsname{\color[rgb]{1,0,0}}%
+      \expandafter\def\csname LT1\endcsname{\color[rgb]{0,1,0}}%
+      \expandafter\def\csname LT2\endcsname{\color[rgb]{0,0,1}}%
+      \expandafter\def\csname LT3\endcsname{\color[rgb]{1,0,1}}%
+      \expandafter\def\csname LT4\endcsname{\color[rgb]{0,1,1}}%
+      \expandafter\def\csname LT5\endcsname{\color[rgb]{1,1,0}}%
+      \expandafter\def\csname LT6\endcsname{\color[rgb]{0,0,0}}%
+      \expandafter\def\csname LT7\endcsname{\color[rgb]{1,0.3,0}}%
+      \expandafter\def\csname LT8\endcsname{\color[rgb]{0.5,0.5,0.5}}%
+    \else
+      % gray
+      \def\colorrgb#1{\color{black}}%
+      \def\colorgray#1{\color[gray]{#1}}%
+      \expandafter\def\csname LTw\endcsname{\color{white}}%
+      \expandafter\def\csname LTb\endcsname{\color{black}}%
+      \expandafter\def\csname LTa\endcsname{\color{black}}%
+      \expandafter\def\csname LT0\endcsname{\color{black}}%
+      \expandafter\def\csname LT1\endcsname{\color{black}}%
+      \expandafter\def\csname LT2\endcsname{\color{black}}%
+      \expandafter\def\csname LT3\endcsname{\color{black}}%
+      \expandafter\def\csname LT4\endcsname{\color{black}}%
+      \expandafter\def\csname LT5\endcsname{\color{black}}%
+      \expandafter\def\csname LT6\endcsname{\color{black}}%
+      \expandafter\def\csname LT7\endcsname{\color{black}}%
+      \expandafter\def\csname LT8\endcsname{\color{black}}%
+    \fi
+  \fi
+  \setlength{\unitlength}{0.0500bp}%
+  \begin{picture}(11320.00,14160.00)%
+    \gplgaddtomacro\gplbacktext{%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(645,11215){\makebox(0,0)[r]{\strut{}-4}}%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(645,11556){\makebox(0,0)[r]{\strut{}-2}}%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(645,11897){\makebox(0,0)[r]{\strut{} 0}}%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(645,12238){\makebox(0,0)[r]{\strut{} 2}}%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(645,12578){\makebox(0,0)[r]{\strut{} 4}}%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(645,12919){\makebox(0,0)[r]{\strut{} 6}}%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(645,13260){\makebox(0,0)[r]{\strut{} 8}}%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(645,13601){\makebox(0,0)[r]{\strut{} 10}}%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(747,11029){\makebox(0,0){\strut{} 0}}%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(1515,11029){\makebox(0,0){\strut{} 0.5}}%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(2282,11029){\makebox(0,0){\strut{} 1}}%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(3050,11029){\makebox(0,0){\strut{} 1.5}}%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(3818,11029){\makebox(0,0){\strut{} 2}}%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(4585,11029){\makebox(0,0){\strut{} 2.5}}%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(5353,11029){\makebox(0,0){\strut{} 3}}%
+      \csname LTb\endcsname%
+      \put(144,12408){\rotatebox{-270}{\makebox(0,0){\strut{}$v_a$ [V]}}}%
+      \csname LTb\endcsname%
+      \put(3050,10750){\makebox(0,0){\strut{}Time [s]}}%
+      \put(3050,13880){\makebox(0,0){\strut{}Armature Voltage}}%
+    }%
+    \gplgaddtomacro\gplfronttext{%
+    }%
+    \gplgaddtomacro\gplbacktext{%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(6407,11215){\makebox(0,0)[r]{\strut{}-0.1}}%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(6407,11513){\makebox(0,0)[r]{\strut{} 0}}%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(6407,11812){\makebox(0,0)[r]{\strut{} 0.1}}%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(6407,12110){\makebox(0,0)[r]{\strut{} 0.2}}%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(6407,12408){\makebox(0,0)[r]{\strut{} 0.3}}%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(6407,12706){\makebox(0,0)[r]{\strut{} 0.4}}%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(6407,13005){\makebox(0,0)[r]{\strut{} 0.5}}%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(6407,13303){\makebox(0,0)[r]{\strut{} 0.6}}%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(6407,13601){\makebox(0,0)[r]{\strut{} 0.7}}%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(6509,11029){\makebox(0,0){\strut{} 0}}%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(7260,11029){\makebox(0,0){\strut{} 0.5}}%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(8010,11029){\makebox(0,0){\strut{} 1}}%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(8761,11029){\makebox(0,0){\strut{} 1.5}}%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(9512,11029){\makebox(0,0){\strut{} 2}}%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(10262,11029){\makebox(0,0){\strut{} 2.5}}%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(11013,11029){\makebox(0,0){\strut{} 3}}%
+      \csname LTb\endcsname%
+      \put(5804,12408){\rotatebox{-270}{\makebox(0,0){\strut{}$\theta_\mathit{opot}$ [\si{.\radian/\second}]}}}%
+      \csname LTb\endcsname%
+      \put(8761,10750){\makebox(0,0){\strut{}Time [s]}}%
+      \put(8761,13880){\makebox(0,0){\strut{}Step Response ($\theta_\mathit{input}=0.5$)}}%
+    }%
+    \gplgaddtomacro\gplfronttext{%
+    }%
+    \gplgaddtomacro\gplbacktext{%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(645,7675){\makebox(0,0)[r]{\strut{}-10}}%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(645,8048){\makebox(0,0)[r]{\strut{}-5}}%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(645,8421){\makebox(0,0)[r]{\strut{} 0}}%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(645,8793){\makebox(0,0)[r]{\strut{} 5}}%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(645,9166){\makebox(0,0)[r]{\strut{} 10}}%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(645,9539){\makebox(0,0)[r]{\strut{} 15}}%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(645,9912){\makebox(0,0)[r]{\strut{} 20}}%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(747,7489){\makebox(0,0){\strut{} 0}}%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(1515,7489){\makebox(0,0){\strut{} 0.5}}%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(2282,7489){\makebox(0,0){\strut{} 1}}%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(3050,7489){\makebox(0,0){\strut{} 1.5}}%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(3818,7489){\makebox(0,0){\strut{} 2}}%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(4585,7489){\makebox(0,0){\strut{} 2.5}}%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(5353,7489){\makebox(0,0){\strut{} 3}}%
+      \csname LTb\endcsname%
+      \put(144,8868){\rotatebox{-270}{\makebox(0,0){\strut{}$v_a$ [V]}}}%
+      \csname LTb\endcsname%
+      \put(3050,7210){\makebox(0,0){\strut{}Time [s]}}%
+      \put(3050,10340){\makebox(0,0){\strut{}Armature Voltage}}%
+    }%
+    \gplgaddtomacro\gplfronttext{%
+    }%
+    \gplgaddtomacro\gplbacktext{%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(6407,7763){\makebox(0,0)[r]{\strut{} 0}}%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(6407,8205){\makebox(0,0)[r]{\strut{} 0.5}}%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(6407,8647){\makebox(0,0)[r]{\strut{} 1}}%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(6407,9089){\makebox(0,0)[r]{\strut{} 1.5}}%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(6407,9531){\makebox(0,0)[r]{\strut{} 2}}%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(6407,9973){\makebox(0,0)[r]{\strut{} 2.5}}%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(6509,7489){\makebox(0,0){\strut{} 0}}%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(7260,7489){\makebox(0,0){\strut{} 0.5}}%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(8010,7489){\makebox(0,0){\strut{} 1}}%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(8761,7489){\makebox(0,0){\strut{} 1.5}}%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(9512,7489){\makebox(0,0){\strut{} 2}}%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(10262,7489){\makebox(0,0){\strut{} 2.5}}%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(11013,7489){\makebox(0,0){\strut{} 3}}%
+      \csname LTb\endcsname%
+      \put(5804,8868){\rotatebox{-270}{\makebox(0,0){\strut{}$\theta_\mathit{opot}$ [\si{.\radian/\second}]}}}%
+      \csname LTb\endcsname%
+      \put(8761,7210){\makebox(0,0){\strut{}Time [s]}}%
+      \put(8761,10340){\makebox(0,0){\strut{}Step Response ($\theta_\mathit{input}=2.0$)}}%
+    }%
+    \gplgaddtomacro\gplfronttext{%
+    }%
+    \gplgaddtomacro\gplbacktext{%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(645,4334){\makebox(0,0)[r]{\strut{}-10}}%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(645,4665){\makebox(0,0)[r]{\strut{}-5}}%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(645,4997){\makebox(0,0)[r]{\strut{} 0}}%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(645,5329){\makebox(0,0)[r]{\strut{} 5}}%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(645,5660){\makebox(0,0)[r]{\strut{} 10}}%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(645,5992){\makebox(0,0)[r]{\strut{} 15}}%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(645,6323){\makebox(0,0)[r]{\strut{} 20}}%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(747,3949){\makebox(0,0){\strut{} 0}}%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(1515,3949){\makebox(0,0){\strut{} 0.5}}%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(2282,3949){\makebox(0,0){\strut{} 1}}%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(3050,3949){\makebox(0,0){\strut{} 1.5}}%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(3818,3949){\makebox(0,0){\strut{} 2}}%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(4585,3949){\makebox(0,0){\strut{} 2.5}}%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(5353,3949){\makebox(0,0){\strut{} 3}}%
+      \csname LTb\endcsname%
+      \put(144,5328){\rotatebox{-270}{\makebox(0,0){\strut{}$v_a$ [V]}}}%
+      \csname LTb\endcsname%
+      \put(3050,3670){\makebox(0,0){\strut{}Time [s]}}%
+      \put(3050,6801){\makebox(0,0){\strut{}Armature Voltage}}%
+    }%
+    \gplgaddtomacro\gplfronttext{%
+    }%
+    \gplgaddtomacro\gplbacktext{%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(6203,4319){\makebox(0,0)[r]{\strut{} 0}}%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(6203,4686){\makebox(0,0)[r]{\strut{} 1}}%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(6203,5053){\makebox(0,0)[r]{\strut{} 2}}%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(6203,5420){\makebox(0,0)[r]{\strut{} 3}}%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(6203,5788){\makebox(0,0)[r]{\strut{} 4}}%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(6203,6155){\makebox(0,0)[r]{\strut{} 5}}%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(6203,6522){\makebox(0,0)[r]{\strut{} 6}}%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(6305,3949){\makebox(0,0){\strut{} 0}}%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(7090,3949){\makebox(0,0){\strut{} 0.5}}%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(7874,3949){\makebox(0,0){\strut{} 1}}%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(8659,3949){\makebox(0,0){\strut{} 1.5}}%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(9444,3949){\makebox(0,0){\strut{} 2}}%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(10228,3949){\makebox(0,0){\strut{} 2.5}}%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(11013,3949){\makebox(0,0){\strut{} 3}}%
+      \csname LTb\endcsname%
+      \put(5804,5328){\rotatebox{-270}{\makebox(0,0){\strut{}$\theta_\mathit{opot}$ [\si{.\radian/\second}]}}}%
+      \csname LTb\endcsname%
+      \put(8659,3670){\makebox(0,0){\strut{}Time [s]}}%
+      \put(8659,6801){\makebox(0,0){\strut{}Step Response ($\theta_\mathit{input}=5.0$)}}%
+    }%
+    \gplgaddtomacro\gplfronttext{%
+    }%
+    \gplgaddtomacro\gplbacktext{%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(645,794){\makebox(0,0)[r]{\strut{}-10}}%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(645,1125){\makebox(0,0)[r]{\strut{}-5}}%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(645,1457){\makebox(0,0)[r]{\strut{} 0}}%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(645,1789){\makebox(0,0)[r]{\strut{} 5}}%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(645,2120){\makebox(0,0)[r]{\strut{} 10}}%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(645,2452){\makebox(0,0)[r]{\strut{} 15}}%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(645,2783){\makebox(0,0)[r]{\strut{} 20}}%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(747,409){\makebox(0,0){\strut{} 0}}%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(1515,409){\makebox(0,0){\strut{} 0.5}}%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(2282,409){\makebox(0,0){\strut{} 1}}%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(3050,409){\makebox(0,0){\strut{} 1.5}}%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(3818,409){\makebox(0,0){\strut{} 2}}%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(4585,409){\makebox(0,0){\strut{} 2.5}}%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(5353,409){\makebox(0,0){\strut{} 3}}%
+      \csname LTb\endcsname%
+      \put(144,1788){\rotatebox{-270}{\makebox(0,0){\strut{}$v_a$ [V]}}}%
+      \csname LTb\endcsname%
+      \put(3050,130){\makebox(0,0){\strut{}Time [s]}}%
+      \put(3050,3261){\makebox(0,0){\strut{}Armature Voltage}}%
+    }%
+    \gplgaddtomacro\gplfronttext{%
+    }%
+    \gplgaddtomacro\gplbacktext{%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(6305,779){\makebox(0,0)[r]{\strut{} 0}}%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(6305,1146){\makebox(0,0)[r]{\strut{} 2}}%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(6305,1513){\makebox(0,0)[r]{\strut{} 4}}%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(6305,1880){\makebox(0,0)[r]{\strut{} 6}}%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(6305,2248){\makebox(0,0)[r]{\strut{} 8}}%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(6305,2615){\makebox(0,0)[r]{\strut{} 10}}%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(6305,2982){\makebox(0,0)[r]{\strut{} 12}}%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(6407,409){\makebox(0,0){\strut{} 0}}%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(7175,409){\makebox(0,0){\strut{} 0.5}}%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(7942,409){\makebox(0,0){\strut{} 1}}%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(8710,409){\makebox(0,0){\strut{} 1.5}}%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(9478,409){\makebox(0,0){\strut{} 2}}%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(10245,409){\makebox(0,0){\strut{} 2.5}}%
+      \colorrgb{0.60,0.60,0.60}%
+      \put(11013,409){\makebox(0,0){\strut{} 3}}%
+      \csname LTb\endcsname%
+      \put(5804,1788){\rotatebox{-270}{\makebox(0,0){\strut{}$\theta_\mathit{opot}$ [\si{.\radian/\second}]}}}%
+      \csname LTb\endcsname%
+      \put(8710,130){\makebox(0,0){\strut{}Time [s]}}%
+      \put(8710,3261){\makebox(0,0){\strut{}Step Response ($\theta_\mathit{input}=10$)}}%
+    }%
+    \gplgaddtomacro\gplfronttext{%
+    }%
+    \gplbacktext
+    \put(0,0){\includegraphics{../Code/Motor/Motor}}%
+    \gplfronttext
+  \end{picture}%
+\endgroup

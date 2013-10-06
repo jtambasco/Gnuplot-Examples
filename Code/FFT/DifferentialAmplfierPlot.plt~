@@ -1,0 +1,74 @@
+#!/usr/bin/env gnuplot
+
+### n: change this parameter to equal the number of data sets to be plotted
+n = 2
+# t: top margin in pixels
+t = 25.0
+# b: key height in pixels (bottom margin)
+b = 25.0
+# h: height of output in pixels
+h = 150.0*n + t + b
+
+### define functions to help set top/bottom margins
+top(i,n,h,t,b) = 1.0 - (t+(h-t-b)*(i-1)/n)/h
+bot(i,n,h,t,b) = 1.0 - (t+(h-t-b)*i/n)/h
+
+### first set up some basic plot parameters
+#set term cairolatex size 15cm,15cm
+#set output 'DifferentialAmplifierPlot.tex'
+
+set term pdfcairo size 15cm,15cm
+set output 'DifferentialAmplifierPlot.pdf'
+
+set border lw 6 #back
+
+set mxtics
+set mytics
+
+set grid mxtics mytics xtics ytics lt 1 lc rgb 'gray70', lt 1 lc rgb 'gray90'
+
+# Make yrange > ytics > function to get padding.
+set yrange [-1.5:1.5]
+set ytics ("" -1.5, -1.25 1, -1.0, -0.75 1, -0.5, -0.25 1, 0.0, 0.25 1, 0.5, 0.75 1, 1.0, 1.25 1, "" -1.5)
+
+set xtics 0,1,5
+set xrange [-0.006:5.006]
+
+set xtics
+set mxtics
+set mytics
+
+set format x ""
+
+set multiplot layout (n+1),1 #font ",14" title 'Input And Output Voltages Of Differential Amplifier'
+
+
+
+### First plot
+# change only plot command here
+currentplot = 1
+set tmargin at screen top(currentplot,n,h,t,b)
+set bmargin at screen bot(currentplot,n,h,t,b)
+unset key
+unset xlabel
+set title 'Input (Bottom) And Output (Top) Voltages Of The Differential Amplifier'
+set ylabel 'Voltage [V]'
+plot 'DifferentialAmplfier.dat' using (1000*$1):2 with lines lw 10 lc rgb 'dark-magenta'
+
+
+### Last plot
+# change only plot command here
+currentplot = currentplot + 1
+set tmargin at screen top(currentplot,n,h,t,b)
+set bmargin at screen bot(currentplot,n,h,t,b)
+set format x
+unset title
+set xlabel 'Time [ms]'
+set ylabel 'Voltage [mV]'
+plot 'DifferentialAmplfier.dat' using (1000*$1):(1000*$3) with lines lw 10 lc rgb 'navy'
+
+unset multiplot
+
+set term x11
+
+

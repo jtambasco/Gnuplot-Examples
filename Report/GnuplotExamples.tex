@@ -1,0 +1,161 @@
+\documentclass[10pt,a4paper,final]{report}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{siunitx}
+\usepackage{animate}
+\usepackage{listings}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{inconsolata}
+\usepackage{titlesec}
+\usepackage{gnuplot-lua-tikz} % Used for TikZ plots.
+
+\newcommand{\sectionbreak}{\clearpage}
+\renewcommand{\thesection}{\arabic{section}}
+
+\hypersetup{
+    colorlinks,
+    citecolor=red,
+    filecolor=blue,
+    linkcolor=[rgb]{0,0,0.5},
+    urlcolor=yellow
+}
+
+\definecolor{CodeRed}{HTML}{EB1717}
+\definecolor{CodeGreen}{HTML}{006400}
+
+\begin{document}
+\lstset
+{
+language=Gnuplot,
+basicstyle=\ttfamily\scriptsize,
+keywordstyle=\bfseries,
+showstringspaces=false,
+tabsize=4,
+numbers=none,
+breaklines=true,
+backgroundcolor=\color{gray!10},
+keywordstyle=\color{CodeRed},
+commentstyle=\color{CodeGreen},
+morekeywords={unset, y2range, x2range, fillystyle, do, for, term, multiplot, w, x2tics, y2tics, mx2tics, my2tics}
+}
+
+\input{TitlePage.tex}
+
+\tableofcontents
+
+\section{Animation And Stacked Plot}
+\begin{figure*}[htbp]
+    \centering
+    \animategraphics[autoplay,controls,loop,width=\textwidth]{20}{../Code/animation/animation/animate}{0}{199}
+    \caption{The is a stacked plot and animation.  At the time it was made, as far as I know, it only worked in Adobe Reader.}
+\end{figure*}
+\lstinputlisting{../Code/animation/animation.plt}
+
+\section{Six Plots On A Page And Curve Fitting}
+\begin{figure}[!hbtp]
+\centering
+\includegraphics[width=\textwidth]{../Code/MotorGraphGnuplot/OpenLoopMotorPlots.pdf}
+\caption{Multiple plots on a page and a straight line has been fit to the data.}
+\end{figure}
+\lstinputlisting{../Code/MotorGraphGnuplot/MotorGraphGnuplot.plt}
+
+\section{Two Plots And Multiple y-Axis}
+\begin{figure}[!htbp]
+\begin{center}
+	\resizebox{\columnwidth}{!}{\input{../Code/11cTRAngle_Plot/11cTRAngle}}
+\caption{Maximum and minimum output voltage as well as a sweep of $v_\mathit{in}$ showing its affect on $V_\mathit{DS}$.}
+\label{fig:11cTRAngle}
+\end{center}
+\end{figure}
+\lstinputlisting{../Code/11cTRAngle_Plot/11cTRAngle_Plot.plt}
+
+\section{Logscale On x-Axis (FFT)}
+\begin{figure}[!htbp]
+\begin{center}
+\resizebox{\columnwidth}{!}{\input{../Code/FFT/FFT}}
+\caption{The x-scale is logarithmic and the y-axis is in decibel.}
+\label{fig:FFT}
+\end{center}
+\end{figure}
+\lstinputlisting{../Code/FFT/FFT.plt}
+
+\section{Two Plots, Vertical Line Drawn And Coordinate Label}
+\begin{figure}[!htbp]
+\begin{center}
+\resizebox{\columnwidth}{!}{\input{../Code/MaxMinVoltages/MaxMinVoltages}}
+\caption{Maximum and minimum output voltage as well as a sweep of $v_\mathit{in}$ showing its affect on $V_\mathit{DS}$.}
+\label{fig:MaxMinVoltages}
+\end{center}
+\end{figure}
+\lstinputlisting{../Code/MaxMinVoltages/MaxMinVoltages.plt}
+
+\section{Two Plots On The Same Plot And A Fit}
+\begin{figure}[!hbtp]
+\centering
+\includegraphics[width=\textwidth]{../Code/OutputResistanceQ2/OutputResistanceQ2.pdf}
+\caption{Two plots on the same plot and a linear fit.}
+\end{figure}
+\lstinputlisting{../Code/OutputResistanceQ2/OutputResistanceQ2.plt}
+
+\section{Thick Curves Do Not Exceed Frame And Major And Minor Gridlines Correctly Painted}
+\begin{figure}[!hbtp]
+\centering
+\includegraphics[width=\textwidth]{../Code/ElectronicCircuitsLab3/ElectronicCircuitsLab3.pdf}
+\caption{Thick plots don't exceed the canvas's frame and the major and minor gridlines are correctly painted (major are drawn over the minor).}
+\end{figure}
+\lstinputlisting{../Code/ElectronicCircuitsLab3/ElectronicCircuitsLab3.plt}
+
+\section{Multiple Data Plots}
+\begin{figure}[!htbp]
+\begin{center}
+\resizebox{\columnwidth}{!}{\input{../Code/Motor/Motor}}
+\caption{Multiple data files plotted onto a page and \LaTeX fonts.}
+\label{fig:Motor}
+\end{center}
+\end{figure}
+\lstinputlisting{../Code/Motor/Motor.plt}
+
+
+\section{TikZ Terminal, Transparent Fille, Correct Gridlines And Curve Does Not Exceed Canvas}
+\begin{figure}[htbp]
+\begin{center}
+\resizebox{\columnwidth}{!}{\input{../Code/MosfetClassAbPower/MosfetClassAbPower}}
+\caption{The plot was done using the TikZ terminal.  It has a transparent fill, the grid lines are correctly painted (minor then major on top) and the curves do not protrude over the canvas's frame either.  There Is also a label.}
+\label{fig:AnimationMosfetClassAB}
+\end{center}
+\end{figure}
+\lstinputlisting{../Code/MosfetClassAbPower/MosfetClassAbPower.plt}
+
+\section{Control Painting Of Everything And Thick Lines Don't Protrude Canvas Frame}
+\begin{figure}[htbp]
+\begin{center}
+\resizebox{\columnwidth}{!}{\input{../Code/MosfetClassAbPowerFixed/MosfetClassAbPowerFixed}}
+\caption{This example is for virtually any terminal.  It basically does everything correct.  It allows controlling of the painting of everything, so major and minor gridlines can be independently drawn, as well as any other part of the graph.  It also prevents protrusion of curves over the frame.  For some reason, in the \texttt{cairolatex} terminal, the rectangles that are drawn to prevent the curve from protruding over the frame covers the x and y labels, as well as the title label, so the \texttt{tikz} terminal was used instead to get the correct \LaTeX fonts.}
+\label{fig:MosfetClassAbPowerFixed}
+\end{center}
+\end{figure}
+\lstinputlisting{../Code/MosfetClassAbPowerFixed/MosfetClassAbPowerFixed.plt}
+
+\section{Multiple Stacked Plots Of Different Sizes}
+\begin{figure}[!hbtp]
+\centering
+\includegraphics[width=\textwidth]{../Code/MultipleStackedPlots/MultipleStackedPlots.pdf}
+\caption{Multiple stacked plots of different sizes.  There is the problem that the y tics don't make it to the top; see \autoref{sec:MultipleSizedPlots} for a working example.}
+\end{figure}
+\lstinputlisting{../Code/MultipleStackedPlots/MultipleStackedPlots.plt}
+
+\section{Multiple Sized Plot On One Page, Mini Stacked Plots And Correct y Tics} \label{sec:MultipleSizedPlots}
+\begin{figure}[!hbtp]
+\centering
+\includegraphics[width=\textwidth]{../Code/MultipleSizedPlots/MultipleSizedPlots.pdf}
+\caption{Multiple sized plot on one page, mini stacked plots and correct y tics.  See }
+\end{figure}
+\lstinputlisting{../Code/MultipleSizedPlots/MultipleSizedPlots.plt}
+In order to generate the correct y-tics, the following Ruby script is used.
+\lstinputlisting[language=Ruby]{../Code/MultipleSizedPlots/GnuplotMajorMinorTicsLastMajorHidden.rb}
+
+\end{document}

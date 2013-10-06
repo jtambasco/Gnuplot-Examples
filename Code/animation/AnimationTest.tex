@@ -1,0 +1,36 @@
+\documentclass[11pt,a4paper,final]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{siunitx}
+\usepackage{fullpage}
+\usepackage{hyperref}
+\usepackage{animate}
+
+
+\title{Electronic Circuits Assignment}
+\author{Jean-Luc Tambasco (\texttt{s3332080})}
+
+\setlength{\jot}{5pt}
+
+\numberwithin{figure}{section}
+\renewcommand{\thesection}{\arabic{section}}
+
+\begin{document}
+
+\maketitle
+
+\section{MOSFET Biased In Class AB}
+
+\begin{figure*}[htbp]
+    \centering
+    \animategraphics[autoplay,controls,loop,width=\textwidth]{20}{./animation/animate}{0}{199}
+    \caption{The animation shows the current waveform ou$  $t of one of the MOSFETs as the gate-source voltage of the MOSFET is varied sinusoidally.  We can see that the MOSFET conducts for slightly more than $\SI{\pi}{\radian}$; this is because the MOSFET is biased in class AB.}
+\end{figure*}
+
+
+
+\end{document}
