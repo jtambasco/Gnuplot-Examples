@@ -9,8 +9,8 @@
 \usepackage{animate}
 \usepackage{listings}
 \usepackage[usenames,dvipsnames]{xcolor}
-\usepackage{inconsolata}
-\usepackage{titlesec}
+\usepackage{inconsolata}%\usepackage{zi4} \usepackage{upquote}
+\usepackage{titlesec} % Used to create a new page with each section.
 \usepackage{gnuplot-lua-tikz} % Used for TikZ plots.
 
 \newcommand{\sectionbreak}{\clearpage}
@@ -37,6 +37,9 @@ showstringspaces=false,
 tabsize=4,
 numbers=none,
 breaklines=true,
+breakatwhitespace=true,
+showstringspaces=false,
+columns=fullflexible, % avoids superfluous spaces
 backgroundcolor=\color{gray!10},
 keywordstyle=\color{CodeRed},
 commentstyle=\color{CodeGreen},
