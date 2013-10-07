@@ -9,7 +9,7 @@
 \usepackage{animate}
 \usepackage{listings}
 \usepackage[usenames,dvipsnames]{xcolor}
-\usepackage{inconsolata}%\usepackage{zi4} \usepackage{upquote}
+\usepackage{inconsolata}
 \usepackage{titlesec} % Used to create a new page with each section.
 \usepackage{gnuplot-lua-tikz} % Used for TikZ plots.
 
@@ -39,6 +39,7 @@ numbers=none,
 breaklines=true,
 breakatwhitespace=true,
 showstringspaces=false,
+upquote=true,
 columns=fullflexible, % avoids superfluous spaces
 backgroundcolor=\color{gray!10},
 keywordstyle=\color{CodeRed},
@@ -70,7 +71,7 @@ morekeywords={unset, y2range, x2range, fillystyle, do, for, term, multiplot, w, 
 \begin{figure}[!htbp]
 \begin{center}
 	\resizebox{\columnwidth}{!}{\input{../Code/11cTRAngle_Plot/11cTRAngle}}
-\caption{Maximum and minimum output voltage as well as a sweep of $v_\mathit{in}$ showing its affect on $V_\mathit{DS}$.}
+\caption{Two \LaTeX terminal plots with a left and right y-axis.}
 \label{fig:11cTRAngle}
 \end{center}
 \end{figure}
