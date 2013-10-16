@@ -168,6 +168,15 @@ title={\textattachfile[color = 0 0 1]{\lstname}{\lstname}{}}%\href{run:\lstname}
 In order to generate the correct y-tics, the following Ruby script is used.
 \lstinputlisting[language=Ruby]{../CodeJeanLuc/MultipleSizedPlots/GnuplotMajorMinorTicsLastMajorHidden.rb}
 
+\section{Total Control Of All Plotting Elements}
+\begin{figure}[htbp]
+\begin{center}
+\resizebox{\columnwidth}{!}{\input{../CodeJeanLuc/TotalControl/TotalControl}}
+\caption{This plot controls the ordering of all elements and works in all terminals.  It required hard-coding the margins.  It also allows white boxes to be drawn to white out any part of the curve that protrudes over the frame.}
+\label{fig:TotalControl}
+\end{center}
+\end{figure}
+\lstinputlisting{../CodeJeanLuc/TotalControl/TotalControl.plt}
 
 
 \part*{Lisa's Plots}
