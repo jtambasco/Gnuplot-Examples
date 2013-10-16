@@ -17,7 +17,8 @@
 \newcommand{\sectionbreak}{\clearpage}
 \renewcommand{\thesection}{\arabic{section}}
 
-\hypersetup{
+\hypersetup
+{
     colorlinks,
     citecolor=red,
     filecolor=blue,
@@ -161,10 +162,40 @@ title={\textattachfile[color = 0 0 1]{\lstname}{\lstname}{}}%\href{run:\lstname}
 \begin{figure}[!hbtp]
 \centering
 \includegraphics[width=\textwidth]{../CodeJeanLuc/MultipleSizedPlots/MultipleSizedPlots.pdf}
-\caption{Multiple sized plot on one page, mini stacked plots and correct y tics.  See }
+\caption{Multiple sized plot on one page, mini stacked plots and correct y tics.}
 \end{figure}
 \lstinputlisting{../CodeJeanLuc/MultipleSizedPlots/MultipleSizedPlots.plt}
 In order to generate the correct y-tics, the following Ruby script is used.
 \lstinputlisting[language=Ruby]{../CodeJeanLuc/MultipleSizedPlots/GnuplotMajorMinorTicsLastMajorHidden.rb}
+
+
+
+\part*{Lisa's Plots}
+\setcounter{section}{0}
+
+\section{Error Bars And Two y-Axes}
+\begin{figure}[!hbtp]
+\centering
+\includegraphics[width=\textwidth]{../CodeLisa/BETAM/BETA2.pdf}
+\caption{This plot features error bars and two y-axis.}
+\end{figure}
+\lstinputlisting{../CodeLisa/BETAM/ISINGuncertainty.plt}
+
+\section{Bar Graph}
+\begin{figure}[!hbtp]
+\centering
+\includegraphics[width=\textwidth]{../CodeLisa/HIST/NEUTMOMK.pdf}
+\caption{A bar graph.}
+\end{figure}
+\lstinputlisting{../CodeLisa/HIST/HIST.plt}
+
+\section{Scatter Plot And Data Isolation}
+\begin{figure}[!hbtp]
+\centering
+\includegraphics[width=\textwidth]{../CodeLisa/RIHRdiagram/RIHR.pdf}
+\caption{The above scatter plot has two different colours; this is achieved by using the ternary operator to isolate part of the data and set it to a different colour.}
+\end{figure}
+\lstinputlisting{../CodeLisa/RIHRdiagram/RIHRdiagram.plt}
+
 
 \end{document}
